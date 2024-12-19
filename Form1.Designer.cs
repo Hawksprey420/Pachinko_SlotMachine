@@ -28,14 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             Banner = new Panel();
             banner_Text = new Label();
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             pictureBox3 = new PictureBox();
-            button1 = new Button();
-            textBox1 = new TextBox();
+            btnSpin = new Button();
+            txtStake = new TextBox();
             label1 = new Label();
+            lblBalance = new Label();
+            lblResult = new Label();
+            timerSpin = new System.Windows.Forms.Timer(components);
             Banner.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -51,6 +55,7 @@
             Banner.Name = "Banner";
             Banner.Size = new Size(1061, 55);
             Banner.TabIndex = 0;
+            Banner.Paint += Banner_Paint;
             // 
             // banner_Text
             // 
@@ -88,45 +93,72 @@
             pictureBox3.TabIndex = 3;
             pictureBox3.TabStop = false;
             // 
-            // button1
+            // btnSpin
             // 
-            button1.Location = new Point(472, 157);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 4;
-            button1.Text = "BET!";
-            button1.UseVisualStyleBackColor = true;
+            btnSpin.Location = new Point(472, 157);
+            btnSpin.Name = "btnSpin";
+            btnSpin.Size = new Size(94, 29);
+            btnSpin.TabIndex = 4;
+            btnSpin.Text = "BET!";
+            btnSpin.UseVisualStyleBackColor = true;
+            btnSpin.Click += btnSpin_Click;
             // 
-            // textBox1
+            // txtStake
             // 
-            textBox1.Location = new Point(457, 335);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(125, 27);
-            textBox1.TabIndex = 5;
+            txtStake.Location = new Point(457, 335);
+            txtStake.Name = "txtStake";
+            txtStake.Size = new Size(125, 27);
+            txtStake.TabIndex = 5;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(495, 302);
+            label1.Location = new Point(467, 302);
             label1.Name = "label1";
-            label1.Size = new Size(50, 20);
+            label1.Size = new Size(99, 20);
             label1.TabIndex = 6;
-            label1.Text = "label1";
+            label1.Text = "Enter Balance";
+            // 
+            // lblBalance
+            // 
+            lblBalance.AutoSize = true;
+            lblBalance.Location = new Point(467, 245);
+            lblBalance.Name = "lblBalance";
+            lblBalance.Size = new Size(101, 20);
+            lblBalance.TabIndex = 7;
+            lblBalance.Text = "Total Balance:";
+            // 
+            // lblResult
+            // 
+            lblResult.AutoSize = true;
+            lblResult.Location = new Point(717, 100);
+            lblResult.Name = "lblResult";
+            lblResult.Size = new Size(49, 20);
+            lblResult.TabIndex = 8;
+            lblResult.Text = "Result";
+            lblResult.Click += lblResult_Click;
+            // 
+            // timerSpin
+            // 
+            timerSpin.Tick += timer1_Tick;
             // 
             // MainWindow
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1061, 398);
+            Controls.Add(lblResult);
+            Controls.Add(lblBalance);
             Controls.Add(label1);
-            Controls.Add(textBox1);
-            Controls.Add(button1);
+            Controls.Add(txtStake);
+            Controls.Add(btnSpin);
             Controls.Add(pictureBox3);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Controls.Add(Banner);
             Name = "MainWindow";
             Text = "Pachinko-SlotMachine";
+            Load += MainWindow_Load;
             Banner.ResumeLayout(false);
             Banner.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -143,8 +175,11 @@
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
-        private Button button1;
-        private TextBox textBox1;
+        private Button btnSpin;
+        private TextBox txtStake;
         private Label label1;
+        private Label lblBalance;
+        private Label lblResult;
+        private System.Windows.Forms.Timer timerSpin;
     }
 }
