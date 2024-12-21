@@ -12,11 +12,13 @@ namespace Pachinko_SlotMachine
         private int balance;
         private int stake;
         private readonly Reel[] reels;
+        private readonly abstract_Theme theme;
 
-        public Slot(int initialBalance, Reel[] reels)
+        public Slot(int initialBalance, Reel[] reels, abstract_Theme theme)
         {
             this.balance = initialBalance;
             this.reels = reels;
+            this.theme = theme;
         }
 
         public int Balance
@@ -63,5 +65,4 @@ namespace Pachinko_SlotMachine
             Balance += winnings;
         }
     }
-
 }

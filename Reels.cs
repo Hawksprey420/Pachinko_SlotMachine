@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,17 +10,20 @@ namespace Pachinko_SlotMachine
 {
     public class Reel
     {
+        //private readonly string[] symbols = { "🍒", "🍋", "🔔", "⭐", "🍇", "💎" };
         private string symbol;
         private readonly PictureBox pictureBox;
-        private readonly string[] symbols = { "🍒", "🍋", "🔔", "⭐", "🍇", "💎" };
-        private readonly Random random = new Random();
+        private static readonly Random random = new Random();
+        private readonly abstract_Theme theme;
 
-        public Reel(PictureBox pictureBox)
+        public Reel(PictureBox pictureBox, abstract_Theme theme)
         {
             this.pictureBox = pictureBox;
+            this.theme = theme;
             this.pictureBox.Paint += Reel_Paint;
-            this.Symbol = symbols[random.Next(symbols.Length)];
+            this.Symbol = theme.Symbols[random.Next(theme.Symbols.Length)];
         }
+
 
         public string Symbol
         {
@@ -42,7 +46,7 @@ namespace Pachinko_SlotMachine
         public void Spin()
         {
             // Randomly select a symbol for the reel and update it
-            Symbol = symbols[random.Next(symbols.Length)];
+            Symbol = theme.Symbols[random.Next(theme.Symbols.Length)];
         }
     }
 

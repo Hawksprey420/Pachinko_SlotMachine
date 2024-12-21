@@ -2,6 +2,8 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using Pachinko_SlotMachine;
+using static Pachinko_SlotMachine.Reel;
+using static Pachinko_SlotMachine.Slot;
 
 namespace Pachinko_SlotMachine
 {
@@ -12,10 +14,11 @@ namespace Pachinko_SlotMachine
         {
             InitializeComponent();
             PictureBox[] pictureBoxes = new PictureBox[] { pictureBox1, pictureBox2, pictureBox3 };
+            InitializeSlotMachine(pictureBoxes, new FruitTheme());
 
             // Create Reel objects for each PictureBox
             Reel[] reels = new Reel[pictureBoxes.Length];
-            for (int i = 0; i < pictureBoxes.Length; i++)
+            /*for (int i = 0; i < pictureBoxes.Length; i++)
             {
                 reels[i] = new Reel(pictureBoxes[i]);
             }
@@ -24,8 +27,24 @@ namespace Pachinko_SlotMachine
             slotMachine = new Slot(1000, reels);
 
             // Update the balance label on the form
-            lblBalance.Text = "Balance: P" + slotMachine.Balance;
+            lblBalance.Text = "Balance: P" + slotMachine.Balance;*/
 
+        }
+
+        private void InitializeSlotMachine(PictureBox[] pictureBoxes, abstract_Theme theme)
+        {
+            // Create Reel objects for each PictureBox using the selected theme
+            Reel[] reels = new Reel[pictureBoxes.Length];
+            for (int i = 0; i < pictureBoxes.Length; i++)
+            {
+                reels[i] = new Reel(pictureBoxes[i], theme);
+            }
+
+            // Initialize SlotMachine object with a starting balance of 1000
+            slotMachine = new Slot(1000, reels, theme);
+
+            // Update the balance label on the form
+            lblBalance.Text = $"Balance: P{slotMachine.Balance}";
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -57,7 +76,7 @@ namespace Pachinko_SlotMachine
 
                 btnSpin.Enabled = false; 	// Disable the button during spin
                 lblResult.Text = "";  	// Clear any previous result
-                //timerSpin.Start();
+                timerSpin.Start();
             }
             else
             {
