@@ -95,7 +95,7 @@
             label5.AutoSize = true;
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Segoe UI Variable Small", 9F);
-            label5.Location = new Point(155, 605);
+            label5.Location = new Point(151, 595);
             label5.Name = "label5";
             label5.RightToLeft = RightToLeft.No;
             label5.Size = new Size(288, 20);
@@ -107,7 +107,7 @@
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Segoe UI Variable Small", 9F);
-            label4.Location = new Point(235, 585);
+            label4.Location = new Point(233, 564);
             label4.Name = "label4";
             label4.RightToLeft = RightToLeft.No;
             label4.Size = new Size(118, 20);
