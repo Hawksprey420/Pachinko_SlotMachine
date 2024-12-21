@@ -29,8 +29,8 @@ namespace Pachinko_SlotMachine
 
     public class GemTheme : abstract_Theme
     {
-        public override string[] Symbols => new string[] { "💎", "🔷", "🔶", "🔸", "🔹", "💠" };
-        public override Font Font => new Font("Segoe UI Emoji", 30, FontStyle.Bold);
+        public override string[] Symbols => new string[] { "💎", "💍", "🔶", "🔸", "🔹", "💠" };
+        public override Font Font => new Font("Segoe Fluent Icons", 30, FontStyle.Bold);
         public override Brush Color => Brushes.Blue;
     }
 }

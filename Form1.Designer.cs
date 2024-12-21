@@ -73,7 +73,7 @@
             // 
             pictureBox1.Location = new Point(572, 77);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(125, 62);
+            pictureBox1.Size = new Size(125, 83);
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             // 
@@ -81,7 +81,7 @@
             // 
             pictureBox2.Location = new Point(441, 77);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(125, 62);
+            pictureBox2.Size = new Size(125, 83);
             pictureBox2.TabIndex = 2;
             pictureBox2.TabStop = false;
             // 
@@ -89,15 +89,15 @@
             // 
             pictureBox3.Location = new Point(309, 77);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(125, 62);
+            pictureBox3.Size = new Size(125, 83);
             pictureBox3.TabIndex = 3;
             pictureBox3.TabStop = false;
             // 
             // btnSpin
             // 
-            btnSpin.Location = new Point(472, 157);
+            btnSpin.Location = new Point(467, 193);
             btnSpin.Name = "btnSpin";
-            btnSpin.Size = new Size(94, 29);
+            btnSpin.Size = new Size(101, 29);
             btnSpin.TabIndex = 4;
             btnSpin.Text = "BET!";
             btnSpin.UseVisualStyleBackColor = true;
@@ -140,6 +140,7 @@
             // 
             // timerSpin
             // 
+            timerSpin.Interval = 200;
             timerSpin.Tick += timer1_Tick;
             // 
             // MainWindow

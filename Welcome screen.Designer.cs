@@ -28,12 +28,57 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Welcome_screen";
+            Choose_ThemeLabel = new Label();
+            themeComboBox = new ComboBox();
+            startGameButton = new Button();
+            SuspendLayout();
+            // 
+            // Choose_ThemeLabel
+            // 
+            Choose_ThemeLabel.AutoSize = true;
+            Choose_ThemeLabel.Location = new Point(325, 178);
+            Choose_ThemeLabel.Name = "Choose_ThemeLabel";
+            Choose_ThemeLabel.Size = new Size(116, 20);
+            Choose_ThemeLabel.TabIndex = 13;
+            Choose_ThemeLabel.Text = "Choose a theme";
+            // 
+            // themeComboBox
+            // 
+            themeComboBox.FormattingEnabled = true;
+            themeComboBox.Location = new Point(325, 201);
+            themeComboBox.Name = "themeComboBox";
+            themeComboBox.Size = new Size(151, 28);
+            themeComboBox.TabIndex = 11;
+            // 
+            // startGameButton
+            // 
+            startGameButton.Location = new Point(325, 244);
+            startGameButton.Name = "startGameButton";
+            startGameButton.Size = new Size(151, 29);
+            startGameButton.TabIndex = 12;
+            startGameButton.Text = "Switch theme";
+            startGameButton.UseVisualStyleBackColor = true;
+            startGameButton.Click += startGameButton_Click;
+            // 
+            // Welcome_screen
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(Choose_ThemeLabel);
+            Controls.Add(themeComboBox);
+            Controls.Add(startGameButton);
+            Name = "Welcome_screen";
+            Text = "Welcome_screen";
+            Load += Welcome_screen_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label Choose_ThemeLabel;
+        private ComboBox themeComboBox;
+        private Button startGameButton;
     }
 }

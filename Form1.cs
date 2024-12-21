@@ -10,25 +10,11 @@ namespace Pachinko_SlotMachine
     public partial class MainWindow : Form
     {
         private Slot slotMachine;
-        public MainWindow()
+        public MainWindow(abstract_Theme theme)
         {
             InitializeComponent();
-            PictureBox[] pictureBoxes = new PictureBox[] { pictureBox1, pictureBox2, pictureBox3 };
-            InitializeSlotMachine(pictureBoxes, new FruitTheme());
-
-            // Create Reel objects for each PictureBox
-            Reel[] reels = new Reel[pictureBoxes.Length];
-            /*for (int i = 0; i < pictureBoxes.Length; i++)
-            {
-                reels[i] = new Reel(pictureBoxes[i]);
-            }
-
-            // Initialize SlotMachine object with initial balance of 1000
-            slotMachine = new Slot(1000, reels);
-
-            // Update the balance label on the form
-            lblBalance.Text = "Balance: P" + slotMachine.Balance;*/
-
+            PictureBox[] pictureBoxes = { pictureBox1, pictureBox2, pictureBox3 };
+            InitializeSlotMachine(pictureBoxes, theme);
         }
 
         private void InitializeSlotMachine(PictureBox[] pictureBoxes, abstract_Theme theme)
@@ -61,8 +47,6 @@ namespace Pachinko_SlotMachine
         {
 
         }
-
-
 
         private void btnSpin_Click(object sender, EventArgs e)
         {
