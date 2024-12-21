@@ -46,15 +46,30 @@ namespace Pachinko_SlotMachine
         {
             int winnings = 0;
 
-            // Check if all three symbols are the same (Jackpot)
-            if (reels[0].Symbol == reels[1].Symbol && reels[1].Symbol == reels[2].Symbol)
+            // Check rows for matches (assumes a 3x3 grid layout)
+            for (int i = 0; i < 3; i++)
             {
-                winnings = stake * 10;  // Win 10x stake
+                if (reels[i * 3].Symbol == reels[i * 3 + 1].Symbol && reels[i * 3 + 1].Symbol == reels[i * 3 + 2].Symbol)
+                {
+                    winnings += stake * 5; // Win 5x stake for a row match
+                }
             }
-            // Check if two symbols match
-            else if (reels[0].Symbol == reels[1].Symbol || reels[1].Symbol == reels[2].Symbol || reels[0].Symbol == reels[2].Symbol)
+
+            for (int i = 0; i < 3; i++)
             {
-                winnings = stake * 2;  // Win 2x stake
+                if (reels[i].Symbol == reels[i + 3].Symbol && reels[i + 3].Symbol == reels[i + 6].Symbol)
+                {
+                    winnings += stake * 5; // Win 5x stake for a column match
+                }
+            }
+
+            if (reels[0].Symbol == reels[4].Symbol && reels[4].Symbol == reels[8].Symbol)
+            {
+                winnings += stake * 10; // Win 10x stake for a diagonal match
+            }
+            if (reels[2].Symbol == reels[4].Symbol && reels[4].Symbol == reels[6].Symbol)
+            {
+                winnings += stake * 10; // Win 10x stake for a diagonal match
             }
 
             return winnings;

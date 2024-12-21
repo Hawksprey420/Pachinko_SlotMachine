@@ -31,6 +31,8 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             Banner = new Panel();
+            label5 = new Label();
+            label4 = new Label();
             label3 = new Label();
             txtStake = new TextBox();
             label1 = new Label();
@@ -66,6 +68,8 @@
             // 
             Banner.BackColor = Color.Orange;
             Banner.BackgroundImage = (Image)resources.GetObject("Banner.BackgroundImage");
+            Banner.Controls.Add(label5);
+            Banner.Controls.Add(label4);
             Banner.Controls.Add(label3);
             Banner.Controls.Add(txtStake);
             Banner.Controls.Add(label1);
@@ -86,6 +90,30 @@
             Banner.TabIndex = 0;
             Banner.Paint += Banner_Paint;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.BackColor = Color.Transparent;
+            label5.Font = new Font("Segoe UI Variable Small", 9F);
+            label5.Location = new Point(155, 605);
+            label5.Name = "label5";
+            label5.RightToLeft = RightToLeft.No;
+            label5.Size = new Size(288, 20);
+            label5.TabIndex = 16;
+            label5.Text = "We are not liable for any financial losses.";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.BackColor = Color.Transparent;
+            label4.Font = new Font("Segoe UI Variable Small", 9F);
+            label4.Location = new Point(235, 585);
+            label4.Name = "label4";
+            label4.RightToLeft = RightToLeft.No;
+            label4.Size = new Size(118, 20);
+            label4.TabIndex = 15;
+            label4.Text = "Bet responsibly.";
+            // 
             // label3
             // 
             label3.AutoSize = true;
@@ -101,7 +129,7 @@
             // 
             // txtStake
             // 
-            txtStake.Location = new Point(27, 468);
+            txtStake.Location = new Point(27, 457);
             txtStake.Name = "txtStake";
             txtStake.Size = new Size(539, 27);
             txtStake.TabIndex = 5;
@@ -112,7 +140,7 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI Variable Small", 9F);
-            label1.Location = new Point(27, 435);
+            label1.Location = new Point(27, 423);
             label1.Name = "label1";
             label1.Size = new Size(128, 20);
             label1.TabIndex = 6;
@@ -121,7 +149,7 @@
             // 
             // btnSpin
             // 
-            btnSpin.Location = new Point(27, 513);
+            btnSpin.Location = new Point(27, 490);
             btnSpin.Name = "btnSpin";
             btnSpin.Size = new Size(539, 54);
             btnSpin.TabIndex = 4;
@@ -152,7 +180,7 @@
             // 
             lblBalance.AutoSize = true;
             lblBalance.BackColor = Color.Transparent;
-            lblBalance.Location = new Point(27, 399);
+            lblBalance.Location = new Point(27, 391);
             lblBalance.Name = "lblBalance";
             lblBalance.Size = new Size(101, 20);
             lblBalance.TabIndex = 7;
@@ -310,5 +338,7 @@
         private Label label2;
         private Panel panel1;
         private Label label3;
+        private Label label5;
+        private Label label4;
     }
 }
