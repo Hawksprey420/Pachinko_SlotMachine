@@ -13,7 +13,7 @@ namespace Pachinko_SlotMachine
         public MainWindow(abstract_Theme theme)
         {
             InitializeComponent();
-            PictureBox[] pictureBoxes = { pictureBox1, pictureBox2, pictureBox3 };
+            PictureBox[] pictureBoxes = { pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, pictureBox7, pictureBox8, pictureBox9 };
             InitializeSlotMachine(pictureBoxes, theme);
         }
 
@@ -95,8 +95,8 @@ namespace Pachinko_SlotMachine
                 // Update the result label
                 if (winnings > 0)
                 {
-                    lblResult.Text = "?? WIN! You earned P" + winnings + " ??";
-                    lblResult.ForeColor = Color.Green;
+                    lblResult.Text = "WIN! You earned P" + winnings + " ??";
+                    lblResult.ForeColor = Color.YellowGreen;
                 }
                 else
                 {
@@ -107,6 +107,26 @@ namespace Pachinko_SlotMachine
                 lblBalance.Text = "Balance: P" + slotMachine.Balance;
                 txtStake.Clear();
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtStake_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
